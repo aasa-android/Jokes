@@ -1,4 +1,4 @@
-package com.free.hindi.shayari;
+package com.free.hindi.jokes;
 
 import android.app.Application;
 
@@ -7,7 +7,7 @@ import com.parse.Parse;
 /**
  * Created by sneha on 28/3/15.
  */
-public class Shayari extends Application {
+public class Jokes extends Application {
 
     @Override
     public void onCreate() {

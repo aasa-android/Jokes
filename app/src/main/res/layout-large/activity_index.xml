@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.free.hindi.shayari.IndexActivity"
+    tools:context="com.free.hindi.jokes.IndexActivity"
     android:background="@color/background">
 
     <TextView
@@ -57,17 +57,17 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/bewafa"
+                        android:id="@+id/boysgirls"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="10"
-                        android:background="@drawable/bewafa"
+                        android:background="@drawable/boysgirls"
                         android:layout_marginRight="10dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Bewafa"
+                        android:text="@string/category1"
                         android:textSize="45sp"
                         android:layout_weight="40"
                         android:layout_marginRight="10dp"
@@ -81,17 +81,17 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/dard"
+                        android:id="@+id/friends"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="10"
-                        android:background="@drawable/dard"
+                        android:background="@drawable/friends"
                         android:layout_marginLeft="10dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Dard"
+                        android:text="@string/category2"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="40"
                         android:textSize="45sp"
@@ -119,17 +119,17 @@
                     android:layout_weight="50">
 
                     <ImageView
-                        android:id="@+id/love"
+                        android:id="@+id/rajini"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="10"
-                        android:background="@drawable/love"
+                        android:background="@drawable/rajini"
                         android:layout_marginRight="10dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Love"
+                        android:text="@string/category3"
                         android:textSize="45sp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="40"
@@ -144,17 +144,17 @@
                     android:layout_weight="50">
 
                     <ImageView
-                        android:id="@+id/romantic"
+                        android:id="@+id/relation"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="10"
                         android:layout_marginLeft="10dp"
-                        android:background="@drawable/romantic" />
+                        android:background="@drawable/relation" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Romentic"
+                        android:text="@string/category4"
                         android:textSize="45sp"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="40"

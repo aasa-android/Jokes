@@ -1,4 +1,4 @@
-package com.free.hindi.shayari;
+package com.free.hindi.jokes;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

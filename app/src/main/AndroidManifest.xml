@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.free.hindi.shayari" >
+    package="com.free.hindi.jokes" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".Shayari"
+        android:name="com.free.hindi.jokes.Jokes"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
         <activity
-            android:name=".MainActivity"
-            android:label="Shayari"
+            android:name="com.free.hindi.jokes.IndexActivity"
+            android:label="@string/title_activity_index"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,21 +24,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".IndexActivity"
-            android:label="@string/title_activity_index"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".ShayarilistActivity"
-            android:label="@string/title_activity_shayarilist"
+            android:name="com.free.hindi.jokes.JokesListActivity"
+            android:label="@string/title_activity_jokes_list"
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.free.hindi.shayari.IndexActivity" />
+                android:value="com.free.hindi.jokes.IndexActivity" />
         </activity>
         <activity
-            android:name=".ShowShayariActivity"
-            android:label="@string/title_activity_show_shayari"
+            android:name="com.free.hindi.jokes.ShowJokesActivity"
+            android:label="@string/title_activity_show_jokes"
             android:screenOrientation="portrait" >
         </activity>
 

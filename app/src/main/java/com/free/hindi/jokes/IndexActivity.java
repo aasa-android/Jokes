@@ -1,4 +1,4 @@
-package com.free.hindi.shayari;
+package com.free.hindi.jokes;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,58 +9,60 @@ import android.widget.ImageView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.startapp.android.publish.StartAppAd;
+import com.startapp.android.publish.StartAppSDK;
 
 
 public class IndexActivity extends ActionBarActivity {
 
-    ImageView mBewafa, mDard, mLove, mRomantic;
+    ImageView mBoysGirls, mFriends, mRajini, mRelation;
     private StartAppAd startAppAd = new StartAppAd(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StartAppSDK.init(this, "102735663", "203061851", true);
         StartAppAd.showSplash(this, savedInstanceState);
-        setContentView(com.free.hindi.shayari.R.layout.activity_index);
+        setContentView(com.free.hindi.jokes.R.layout.activity_index);
         StartAppAd.showSlider(this);
 
-        AdView mAdView = (AdView) findViewById(com.free.hindi.shayari.R.id.adView);
+        AdView mAdView = (AdView) findViewById(com.free.hindi.jokes.R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        mBewafa = (ImageView) findViewById(com.free.hindi.shayari.R.id.bewafa);
-        mDard = (ImageView) findViewById(com.free.hindi.shayari.R.id.dard);
-        mLove = (ImageView) findViewById(com.free.hindi.shayari.R.id.love);
-        mRomantic = (ImageView) findViewById(com.free.hindi.shayari.R.id.romantic);
+        mBoysGirls = (ImageView) findViewById(R.id.boysgirls);
+        mFriends = (ImageView) findViewById(R.id.friends);
+        mRajini = (ImageView) findViewById(R.id.rajini);
+        mRelation = (ImageView) findViewById(R.id.relation);
 
-        mBewafa.setOnClickListener(new View.OnClickListener() {
+        mBoysGirls.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexActivity.this, ShayarilistActivity.class);
-                intent.putExtra("image", "bewafa");
+                Intent intent = new Intent(IndexActivity.this, JokesListActivity.class);
+                intent.putExtra("image", "boysgirls");
                 startActivity(intent);
             }
         });
-        mDard.setOnClickListener(new View.OnClickListener() {
+        mFriends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexActivity.this, ShayarilistActivity.class);
-                intent.putExtra("image", "dard");
+                Intent intent = new Intent(IndexActivity.this, JokesListActivity.class);
+                intent.putExtra("image", "friends");
                 startActivity(intent);
             }
         });
-        mLove.setOnClickListener(new View.OnClickListener() {
+        mRajini.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexActivity.this, ShayarilistActivity.class);
-                intent.putExtra("image", "love");
+                Intent intent = new Intent(IndexActivity.this, JokesListActivity.class);
+                intent.putExtra("image", "rajini");
                 startActivity(intent);
             }
         });
-        mRomantic.setOnClickListener(new View.OnClickListener() {
+        mRelation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexActivity.this, ShayarilistActivity.class);
-                intent.putExtra("image", "romantic");
+                Intent intent = new Intent(IndexActivity.this, JokesListActivity.class);
+                intent.putExtra("image", "relationship");
                 startActivity(intent);
             }
         });

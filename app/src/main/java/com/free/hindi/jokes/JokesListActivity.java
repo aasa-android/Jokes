@@ -1,4 +1,4 @@
-package com.free.hindi.shayari;
+package com.free.hindi.jokes;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -21,7 +21,7 @@ import com.startapp.android.publish.StartAppAd;
 import adapters.ListAdapter;
 
 
-public class ShayarilistActivity extends ActionBarActivity {
+public class JokesListActivity extends ActionBarActivity {
 
     ListView list;
     ListAdapter adapter;
@@ -32,24 +32,24 @@ public class ShayarilistActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.free.hindi.shayari.R.layout.activity_shayarilist);
+        setContentView(R.layout.activity_jokes_list);
         StartAppAd.showSlider(this);
 
-        AdView mAdView = (AdView) findViewById(com.free.hindi.shayari.R.id.adView);
+        AdView mAdView = (AdView) findViewById(com.free.hindi.jokes.R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-          mimage = getIntent().getStringExtra("image");
+        mimage = getIntent().getStringExtra("image");
 
-        Toolbar toolbar = (Toolbar) findViewById(com.free.hindi.shayari.R.id.app_bar);
+        Toolbar toolbar = (Toolbar) findViewById(com.free.hindi.jokes.R.id.app_bar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(mimage.toUpperCase() + " Shayari");
+        getSupportActionBar().setTitle(mimage.toUpperCase() + " Jokes");
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        list = (ListView) findViewById(com.free.hindi.shayari.R.id.listView);
+        list = (ListView) findViewById(com.free.hindi.jokes.R.id.listView);
 
         adapter = new ListAdapter(this, new ParseQueryAdapter.QueryFactory<ParseObject>() {
 
@@ -59,7 +59,7 @@ public class ShayarilistActivity extends ActionBarActivity {
                 return query;
             }
         }, mimage);
-        adapter.setTextKey("shayari_name");
+        adapter.setTextKey("JokeName");
 
         list.setAdapter(adapter);
 
@@ -67,7 +67,7 @@ public class ShayarilistActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(ShayarilistActivity.this, ShowShayariActivity.class);
+                Intent intent = new Intent(JokesListActivity.this, ShowJokesActivity.class);
                 sid = adapter.getItem(position).getObjectId();
                 System.out.println(" set on item click listener call" + adapter.getItem(position).getObjectId());
                 startActivity(intent);
@@ -84,7 +84,7 @@ public class ShayarilistActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_shayarilist, menu);
+        getMenuInflater().inflate(R.menu.menu_jokes_list, menu);
         return true;
     }
 

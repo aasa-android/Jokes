@@ -1,4 +1,4 @@
-package com.free.hindi.shayari;
+package com.free.hindi.jokes;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -20,42 +20,42 @@ import com.startapp.android.publish.StartAppAd;
 import java.util.List;
 
 
-public class ShowShayariActivity extends ActionBarActivity {
+public class ShowJokesActivity extends ActionBarActivity {
 
-    TextView showshayari;
-    protected List<ParseObject> mShayari;
+    TextView showJokes;
+    protected List<ParseObject> mJokes;
     int i;
     private StartAppAd startAppAd = new StartAppAd(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.free.hindi.shayari.R.layout.activity_show_shayari);
+        setContentView(R.layout.activity_show_jokes);
         StartAppAd.showSlider(this);
 
-        Toolbar toolbar = (Toolbar) findViewById(com.free.hindi.shayari.R.id.app_bar);
+        Toolbar toolbar = (Toolbar) findViewById(com.free.hindi.jokes.R.id.app_bar);
         setSupportActionBar(toolbar);
 
-        AdView mAdView = (AdView) findViewById(com.free.hindi.shayari.R.id.adView);
+        AdView mAdView = (AdView) findViewById(com.free.hindi.jokes.R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        showshayari = (TextView) findViewById(com.free.hindi.shayari.R.id.textView);
+        showJokes = (TextView) findViewById(com.free.hindi.jokes.R.id.textView);
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery(ShayarilistActivity.mimage);
-        query.whereEqualTo("objectId", ShayarilistActivity.sid);
+        ParseQuery<ParseObject> query = ParseQuery.getQuery(JokesListActivity.mimage);
+        query.whereEqualTo("objectId", JokesListActivity.sid);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
                 if (e == null) {
-                    mShayari = parseObjects;
-                    String[] username = new String[mShayari.size()];
+                    mJokes = parseObjects;
+                    String[] username = new String[mJokes.size()];
 
-                    for (ParseObject message : mShayari) {
-                        username[i] = message.getString("Shayari");
+                    for (ParseObject message : mJokes) {
+                        username[i] = message.getString("Joke");
 
                         // Toast.makeText(ChatActivity.this, username[i], Toast.LENGTH_LONG).show();
-                        showshayari.setText(username[i]);
+                        showJokes.setText(username[i]);
                         i++;
                     }
                     Log.d("score", "Retrieved " + " scores");
@@ -69,7 +69,7 @@ public class ShowShayariActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.free.hindi.shayari.R.menu.menu_show_shayari, menu);
+        getMenuInflater().inflate(R.menu.menu_show_jokes, menu);
         return true;
     }
 
@@ -101,8 +101,8 @@ public class ShowShayariActivity extends ActionBarActivity {
     private void sharePost() {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, showshayari.getText());
-        startActivity(Intent.createChooser(shareIntent, getString(com.free.hindi.shayari.R.string.share_title)));
+        shareIntent.putExtra(Intent.EXTRA_TEXT, showJokes.getText());
+        startActivity(Intent.createChooser(shareIntent, getString(com.free.hindi.jokes.R.string.share_title)));
 
     }
 

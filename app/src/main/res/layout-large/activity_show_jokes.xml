@@ -15,7 +15,7 @@
         ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
 
     <ScrollView
-        tools:context="com.free.hindi.shayari.ShowShayariActivity"
+        tools:context="com.free.hindi.jokes.ShowJokesActivity"
         android:layout_height="match_parent"
         android:layout_above="@+id/adView"
         android:layout_width="match_parent"

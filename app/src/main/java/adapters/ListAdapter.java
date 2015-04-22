@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.free.hindi.shayari.R;
-import com.free.hindi.shayari.ShayarilistActivity;
+import com.free.hindi.jokes.R;
+import com.free.hindi.jokes.JokesListActivity;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
@@ -24,8 +24,7 @@ public class ListAdapter extends ParseQueryAdapter<ParseObject> {
     public ListAdapter(Context context, QueryFactory<ParseObject> item, String mimage) {
         super(context, new ParseQueryAdapter.QueryFactory<ParseObject>() {
             public ParseQuery<ParseObject> create() {
-
-                ParseQuery query = new ParseQuery(ShayarilistActivity.mimage);
+                ParseQuery query = new ParseQuery(JokesListActivity.mimage);
                 return query;
             }
         });
@@ -34,31 +33,28 @@ public class ListAdapter extends ParseQueryAdapter<ParseObject> {
 
 
     public View getItemView(final ParseObject parseObject, View v, ViewGroup parent) {
-
-        if (v == null) {
-            v = View.inflate(getContext(), R.layout.item_list_shayari, null);
-        }
-
         super.getItemView(parseObject, v, parent);
+        if (v == null) {
+            v = View.inflate(getContext(), R.layout.item_list_jokes, null);
+        }
 
         ImageView mealImage = (ImageView) v.findViewById(R.id.favorite_star);
 
-        if (img.equals("bewafa")) {
-            mealImage.setImageResource(R.drawable.bewafa);
+        if (img.equals("boysgirls")) {
+            mealImage.setImageResource(R.drawable.boysgirls);
         }
-        if (img.equals("dard")) {
-            mealImage.setImageResource(R.drawable.dard);
+        if (img.equals("friends")) {
+            mealImage.setImageResource(R.drawable.friends);
         }
-        if (img.equals("love")) {
-            mealImage.setImageResource(R.drawable.love);
+        if (img.equals("rajini")) {
+            mealImage.setImageResource(R.drawable.rajini);
         }
-        if (img.equals("romantic")) {
-            mealImage.setImageResource(R.drawable.romantic);
+        if (img.equals("relationship")) {
+            mealImage.setImageResource(R.drawable.relation);
         }
-
 
         TextView titleTextView = (TextView) v.findViewById(R.id.text1);
-        titleTextView.setText(parseObject.getString("shayari_name"));
+        titleTextView.setText(parseObject.getString("JokeName"));
 
         itemId = parseObject.getObjectId();
         System.out.println(itemId);
