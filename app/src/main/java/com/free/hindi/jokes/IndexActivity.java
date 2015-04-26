@@ -21,7 +21,6 @@ public class IndexActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StartAppSDK.init(this, "102735663", "203061851", true);
-        StartAppAd.showSplash(this, savedInstanceState);
         setContentView(com.free.hindi.jokes.R.layout.activity_index);
         StartAppAd.showSlider(this);
 
